@@ -1,0 +1,6 @@
+{
+  "name": "Growing Deep",
+  "description": "A clean, warm, trustworthy Bible study app for personal devotion and church small-group study with AI study assistant.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

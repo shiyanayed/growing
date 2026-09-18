@@ -40,6 +40,11 @@ fun AiStudyScreen(
     modifier: Modifier = Modifier
 ) {
     val listState = rememberLazyListState()
+    var showMethodDialog by remember { mutableStateOf(false) }
+
+    if (showMethodDialog) {
+        AboutOurMethodDialog(onDismiss = { showMethodDialog = false })
+    }
 
     LaunchedEffect(state.messages.size) {
         if (state.messages.isNotEmpty()) {
@@ -83,7 +88,19 @@ fun AiStudyScreen(
                 },
                 colors = TopAppBarDefaults.topAppBarColors(
                     containerColor = MaterialTheme.colorScheme.surface
-                )
+                ),
+                actions = {
+                    IconButton(
+                        onClick = { showMethodDialog = true },
+                        modifier = Modifier.testTag("about_method_btn")
+                    ) {
+                        Icon(
+                            imageVector = Icons.Outlined.Info,
+                            contentDescription = "About Our Method & Theological Governance",
+                            tint = MaterialTheme.colorScheme.primary
+                        )
+                    }
+                }
             )
         },
         bottomBar = {
@@ -432,4 +449,129 @@ fun TheologicalSectionView(
             }
         }
     }
+}
+
+@Composable
+fun AboutOurMethodDialog(
+    onDismiss: () -> Unit
+) {
+    AlertDialog(
+        onDismissRequest = onDismiss,
+        title = {
+            Row(verticalAlignment = Alignment.CenterVertically) {
+                Icon(
+                    imageVector = Icons.Outlined.Info,
+                    contentDescription = null,
+                    tint = MaterialTheme.colorScheme.primary,
+                    modifier = Modifier.size(24.dp)
+                )
+                Spacer(modifier = Modifier.width(8.dp))
+                Text(
+                    text = "About Our Theological Method",
+                    style = MaterialTheme.typography.titleLarge,
+                    fontWeight = FontWeight.Bold
+                )
+            }
+        },
+        text = {
+            LazyColumn(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .testTag("about_method_dialog_content"),
+                verticalArrangement = Arrangement.spacedBy(14.dp)
+            ) {
+                item {
+                    Text(
+                        text = "To protect disciples and teachers from AI hallucination and sectarian bias, our assistant adheres to a rigorous three-tier epistemic framework grounded in historic orthodox Christianity.",
+                        style = MaterialTheme.typography.bodyMedium
+                    )
+                }
+
+                item {
+                    Card(
+                        colors = CardDefaults.cardColors(
+                            containerColor = Color(0xFFE8F5E9),
+                            contentColor = Color(0xFF1B5E20)
+                        ),
+                        shape = RoundedCornerShape(12.dp)
+                    ) {
+                        Column(modifier = Modifier.padding(12.dp)) {
+                            Text(
+                                text = "📗 1. Scripture Says (Direct Affirmation)",
+                                style = MaterialTheme.typography.labelLarge,
+                                fontWeight = FontWeight.Bold
+                            )
+                            Spacer(modifier = Modifier.height(4.dp))
+                            Text(
+                                text = "Criteria: What is explicitly, objectively affirmed in the biblical text using grammatical-historical exegesis. Never treats human deductions or inferences as direct scripture.",
+                                style = MaterialTheme.typography.bodySmall
+                            )
+                        }
+                    }
+                }
+
+                item {
+                    Card(
+                        colors = CardDefaults.cardColors(
+                            containerColor = Color(0xFFE3F2FD),
+                            contentColor = Color(0xFF0D47A1)
+                        ),
+                        shape = RoundedCornerShape(12.dp)
+                    ) {
+                        Column(modifier = Modifier.padding(12.dp)) {
+                            Text(
+                                text = "📘 2. Theological Interpretation (Historic Orthodoxy)",
+                                style = MaterialTheme.typography.labelLarge,
+                                fontWeight = FontWeight.Bold
+                            )
+                            Spacer(modifier = Modifier.height(4.dp))
+                            Text(
+                                text = "Criteria: Synthesis derived from historic Christian creeds (Apostles', Nicene, Chalcedonian) and consensus confessions across church history (e.g. Trinity, divine sovereignty, total depravity, substitutionary atonement).",
+                                style = MaterialTheme.typography.bodySmall
+                            )
+                        }
+                    }
+                }
+
+                item {
+                    Card(
+                        colors = CardDefaults.cardColors(
+                            containerColor = Color(0xFFFFF3E0),
+                            contentColor = Color(0xFFE65100)
+                        ),
+                        shape = RoundedCornerShape(12.dp)
+                    ) {
+                        Column(modifier = Modifier.padding(12.dp)) {
+                            Text(
+                                text = "📙 3. Debated Among Traditions (Charitable Nuance)",
+                                style = MaterialTheme.typography.labelLarge,
+                                fontWeight = FontWeight.Bold
+                            )
+                            Spacer(modifier = Modifier.height(4.dp))
+                            Text(
+                                text = "Criteria: Secondary and tertiary doctrines where godly, bible-believing traditions differ (e.g., Reformed vs. Arminian soteriology, Credobaptist vs. Paedobaptist ecclesiology, Millennial eschatology). Each view is represented fairly without taking sides.",
+                                style = MaterialTheme.typography.bodySmall
+                            )
+                        }
+                    }
+                }
+
+                item {
+                    Text(
+                        text = "Zero-Hallucination Pipeline: Citations are structurally cross-checked against a static 66-book canon table and verified against local and public-domain biblical registries.",
+                        style = MaterialTheme.typography.labelSmall,
+                        color = MaterialTheme.colorScheme.onSurfaceVariant
+                    )
+                }
+            }
+        },
+        confirmButton = {
+            TextButton(
+                onClick = onDismiss,
+                modifier = Modifier.testTag("close_about_method_btn")
+            ) {
+                Text("Got It")
+            }
+        }
+    )
 }

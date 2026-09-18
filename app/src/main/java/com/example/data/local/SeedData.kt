@@ -32,15 +32,15 @@ object SeedData {
         )
         members.forEach { dao.insertMember(it) }
 
-        // 4. Starter Guide: Foundational (15 lessons)
+        // 4. Starter Guide: Foundational (19 lessons)
         val foundationalGuide = GuideEntity(
             id = "guide_foundational",
             title = "Foundations of Faith",
             level = "Foundational",
-            description = "A 15-lesson comprehensive journey through core Christian doctrine and spiritual formation.",
+            description = "A 19-lesson comprehensive journey through core Christian doctrine and spiritual formation.",
             authorId = "system",
             isPublic = true,
-            totalLessons = 15
+            totalLessons = 19
         )
 
         val intermediateGuide = GuideEntity(
@@ -365,7 +365,87 @@ object SeedData {
                     "How can you integrate your secular employment or daily duties with kingdom intentionality?",
                     "What next step of obedience is the Lord speaking to you as we finish this Foundations guide?"
                 ),
-                leaderNotes = "Commissioning Moment: Conclude this final lesson by laying hands on or praying individually over each member's personal mission field."
+                leaderNotes = "Commissioning Moment: Conclude this lesson by praying individually over each member's personal mission field."
+            ),
+            LessonEntity(
+                id = "lesson_foundational_16",
+                guideId = "guide_foundational",
+                orderIndex = 16,
+                title = "The Atonement of Christ",
+                objective = "Grasp the multi-faceted biblical glory of Christ's cross: reconciliation, propitiation, and victory over sin and death.",
+                keyVerses = listOf("Romans 3:23-26", "2 Corinthians 5:21", "Colossians 2:13-15", "1 Peter 2:24"),
+                teachingPoints = listOf(
+                    "Penal Substitution: Christ willingly stood in our place, bearing the righteous judgment of God against human rebellion.",
+                    "Christus Victor: Through the cross, Jesus disarmed cosmic principalities and triumphed over death, devil, and spiritual bondage.",
+                    "Reconciliation & Expiation: The blood of Christ removes the stain and guilt of our transgression, restoring covenant peace with God.",
+                    "Exemplary & Transformational: The cross demonstrates the infinite love of God, calling us to self-sacrificial love for one another."
+                ),
+                discussionQuestions = listOf(
+                    "1. When you gaze upon the cross of Christ, which facet (pardon, victory over fear, or reconciliation) brings you greatest peace?",
+                    "2. How does understanding Christ as our substitute liberate us from both legalism and crushing guilt?",
+                    "3. In what practical relationships can you reflect the self-giving, reconciling heart of the cross this week?"
+                ),
+                leaderNotes = "Theological Nuance: Affirm the historic catholic consensus that Christ's death is truly propitiatory while noting how classic Christus Victor and substitutionary views enrich rather than oppose one another."
+            ),
+            LessonEntity(
+                id = "lesson_foundational_17",
+                guideId = "guide_foundational",
+                orderIndex = 17,
+                title = "Suffering & Theodicy",
+                objective = "Navigate pain, injustice, and grief with biblical lament, unshakable hope, and trust in God's redemptive sovereignty.",
+                keyVerses = listOf("Romans 8:18-28", "2 Corinthians 1:3-7", "Habakkuk 3:17-19", "Psalm 42:5-11"),
+                teachingPoints = listOf(
+                    "The Reality of a Groaning World: Creation suffers under the curse of sin; believers are not exempted from trials, disease, or heartache.",
+                    "The Sacred Language of Lament: Scripture models honest crying out to God (Psalms of lament, Job) rather than stoic denial or toxic positivity.",
+                    "Sovereign Redemptive Purpose: God never wastes our sorrow; He uses adversity to refine character, comfort others, and deepen dependence.",
+                    "The Promise of Incomparable Glory: Present suffering is not worthy to be compared to the eternal weight of glory prepared for us."
+                ),
+                discussionQuestions = listOf(
+                    "1. Have you ever felt guilty for feeling sorrow or asking God 'why'? How do the biblical Psalms of lament liberate us?",
+                    "2. Looking back over past seasons of pain, where did you eventually catch a glimpse of God's sustaining presence or comfort?",
+                    "3. How can our small group serve as a safe sanctuary for members currently walking through deep valleys?"
+                ),
+                leaderNotes = "Pastoral Care: Create a tender, attentive space. Avoid offering glib clichés; focus on Christ weeping with Mary and Martha at Lazarus' tomb."
+            ),
+            LessonEntity(
+                id = "lesson_foundational_18",
+                guideId = "guide_foundational",
+                orderIndex = 18,
+                title = "The Sacraments: Baptism & Communion",
+                objective = "Celebrate the covenant ordinances instituted by Christ that tangibly display the gospel to His gathered Church.",
+                keyVerses = listOf("Matthew 28:19", "Romans 6:3-5", "1 Corinthians 11:23-29", "Acts 2:38-42"),
+                teachingPoints = listOf(
+                    "Visible Signs of Invisible Grace: The sacraments are outward, physical signs instituted by Jesus that proclaim the gospel through water, bread, and cup.",
+                    "Baptism: Signifies union with Christ in His death, burial, and resurrection, cleansing from sin, and entrance into the covenant family.",
+                    "The Lord's Supper: A recurring feast of remembrance, communion with the living Christ, proclamation of His cross, and anticipation of His banqueting return.",
+                    "Self-Examination & Unity: Participating in communion calls believers to confess personal sin and embody reconciliation with brothers and sisters."
+                ),
+                discussionQuestions = listOf(
+                    "1. What did your baptism mean to your spiritual journey, and how does remembering it strengthen your identity today?",
+                    "2. How does sharing the Lord's Supper recalibrate your focus from routine life toward Christ's broken body and shed blood?",
+                    "3. Why did the early church partake in communion with genuine awe and reverent self-examination?"
+                ),
+                leaderNotes = "Ecumenical Charity: Highlight common orthodox consensus (Christ commanded both; they are means of grace/communion) while charitably noting differences in timing (credo vs. paedobaptism) and mode of Christ's presence."
+            ),
+            LessonEntity(
+                id = "lesson_foundational_19",
+                guideId = "guide_foundational",
+                orderIndex = 19,
+                title = "Eschatology: The Blessed Hope",
+                objective = "Anchor your soul in the physical return of Christ, the resurrection of the body, and the renewal of all creation.",
+                keyVerses = listOf("Titus 2:11-14", "1 Thessalonians 4:13-18", "1 Corinthians 15:50-58", "Revelation 21:1-5"),
+                teachingPoints = listOf(
+                    "The Personal, Physical Return of Christ: Jesus will return visibly in majesty to eradicate evil, judge the world, and consummate His kingdom.",
+                    "The Bodily Resurrection: Believers will not remain disembodied spirits; Christ will raise our mortal bodies imperishable, like His glorified body.",
+                    "The Final Judgment: God will judge every thought and deed with absolute justice, vindicating His righteousness and His saints.",
+                    "The New Heavens and New Earth: The ultimate Christian destination is not a cloud in the sky, but a renewed, resurrected cosmos where God dwells with man, wiping away every tear."
+                ),
+                discussionQuestions = listOf(
+                    "1. How does the promise of bodily resurrection and a renewed earth change how you value your daily work and stewardship of creation?",
+                    "2. How does the 'Blessed Hope' of Christ's return sustain your hope when modern society seems anxious, fragmented, and weary?",
+                    "3. In what ways does awaiting the Bridegroom purify our daily choices and kindle active evangelistic urgency?"
+                ),
+                leaderNotes = "Focus on the Essentials: Keep the focus on the triumphant return of Jesus, bodily resurrection, and new creation, rather than becoming entangled in speculative prophetic charts."
             )
         )
 

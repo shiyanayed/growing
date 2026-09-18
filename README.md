@@ -15,13 +15,36 @@
 
 ### 2. Guarded AI Theological Assistant
 - **Strict Epistemic Categories**: The AI companion separates every response into three distinct labels:
-  - 📗 **"Scripture says"**: What is explicitly affirmed in the biblical text, complete with citations.
-  - 📘 **"Theological interpretation"**: Deductions and systematic theology synthesized across Christian orthodoxy.
-  - 📙 **"Debated among traditions"**: Objective, fair presentation of legitimate historical differences (e.g., Reformed vs. Arminian, Covenant vs. Dispensational).
+  - 📗 **"Scripture says"**: What is explicitly affirmed in the biblical text using grammatical-historical exegesis, complete with verified citations.
+  - 📘 **"Theological interpretation"**: Deductions and systematic theology synthesized across historical Christian orthodoxy (e.g. Nicene, Chalcedonian, Apostles' creeds, historic Reformation confessions).
+  - 📙 **"Debated among traditions"**: Objective, fair presentation of legitimate historical differences (e.g., Reformed vs. Arminian soteriology, Credobaptist vs. Paedobaptist ecclesiology, Millennial eschatology).
 - **Context-Aware Inquiries**: Automatically pulls in the currently viewed chapter and verse, with direct scripture links back into the reading view.
+- **Three-Layer Anti-Hallucination Engine**:
+  1. *Local Grounding*: Real passage text injected directly into prompt constraints.
+  2. *Structural Canon Validation*: Zero-network 66-book canon table verifies book, chapter, and verse existence.
+  3. *External Cross-Check*: Secondary references cross-checked and marked with verification chips.
 
 ### 3. Structured Study Guides & Curriculum
-- **Foundational Curriculum**: Includes a 15-lesson systematic study guide covering *The Gospel, Justification, Redemption, Regeneration, Adoption, The Nature of God, Christ, The Holy Spirit, Scripture, Prayer, Sanctification, Repentance, Identity in Christ, The Church, and Calling & Mission*.
+- **Foundational Curriculum**: Includes a 19-lesson systematic study guide covering:
+  1. The Gospel of Grace
+  2. Justification by Faith
+  3. Redemption in Christ
+  4. Regeneration & The New Birth
+  5. Adoption into God's Family
+  6. The Holy Trinity & Nature of God
+  7. The Person & Work of Jesus Christ
+  8. The Holy Spirit & Divine Guidance
+  9. The Authority & Sufficiency of Scripture
+  10. Intimacy with God in Prayer
+  11. Sanctification & Walking in the Spirit
+  12. Biblical Repentance & Mortification of Sin
+  13. Secure Identity in Christ
+  14. The Local Church & Spiritual Community
+  15. Calling & Missional Ambassadorship
+  16. **The Atonement of Christ** (*Penal substitution, Christus Victor, reconciliation*)
+  17. **Suffering & Theodicy** (*Lament, God's sovereignty, eternal glory*)
+  18. **The Sacraments: Baptism & The Lord's Supper** (*Covenant signs, communion*)
+  19. **Eschatology: The Blessed Hope** (*Bodily resurrection, new heavens and new earth*)
 - **Consistent Lesson Layout**: Each lesson includes clear objectives, primary scripture passages, bulleted teaching points, and numbered discussion questions (restarting at 1 for every lesson).
 - **Leader Mode**: Leaders can toggle on facilitation tips, suggested answers, historical nuances, and discussion pointers.
 - **Custom Guide Builder & Document Export**: Leaders can create custom study guides and export formatted curricula to printable plain text or shareable documents.
@@ -81,6 +104,43 @@ app/src/main/java/com/example/
     ├── reader/                          # Bible reading canvas, word study & verse drawer
     └── theme/                           # Parchment, navy, and gold Material 3 theme palette
 ```
+
+---
+
+## Theological Governance & Method ("About Our Method")
+
+The application enforces a strict hermeneutical method to safeguard teachers, small groups, and believers from machine hallucination and modern ideological revisionism:
+
+1. **"Scripture Says" Criteria**:
+   - Strictly derived from grammatical-historical exegesis of canonical texts.
+   - Restricts assertions to explicit propositions stated in the biblical text.
+   - Refuses to label inferences or deductions as direct scriptural sayings.
+2. **"Theological Interpretation" Criteria**:
+   - Formulated in harmony with the historic Ecumenical Creeds: *The Apostles' Creed*, *The Nicene-Constantinopolitan Creed (381)*, and *The Definition of Chalcedon (451)*.
+   - Informed by historical consensus across classical Christian orthodoxy (e.g. *Augustine, Athanasius, Anselm, Aquinas, Luther, Calvin, Cranmer, Owen, Wesley, Bavinck*).
+   - Covers central dogmas: the Trinity, the hypostatic union of Christ, original sin, justification by grace through faith, bodily resurrection, and general revelation.
+3. **"Debated Among Traditions" Criteria**:
+   - Secondary and tertiary matters where godly, orthodox Christian communions differ historically.
+   - Balanced presentation of:
+     - **Soteriology**: Reformed (Monergism, Particular Atonement) vs. Arminian/Wesleyan (Synergism, Prevenient Grace) vs. Eastern Orthodox (Theosis/Synergy).
+     - **Ecclesiology & Sacraments**: Credobaptist (Believer's immersion, memorialism/spiritual presence) vs. Paedobaptist (Infant covenant baptism, real spiritual presence/sacramental seal).
+     - **Eschatology**: Historic Premillennialism, Amillennialism, Postmillennialism, and Dispensationalism.
+     - **Spiritual Gifts**: Continuationist vs. Cessationist perspectives.
+
+---
+
+## Biblical Data & Lexicon Sources
+
+All scripture texts and original language lexicons bundled in **Growing Deep** use open, verified public-domain or permissive scholarly sources:
+
+1. **Biblical Texts**:
+   - **Berean Standard Bible (BSB)**: Used by public domain dedication / royalty-free permission ([Berean.Bible](https://berean.bible)).
+   - **World English Bible (WEB)**: Dedicated to the Public Domain ([WorldEnglish.Bible](https://worldenglish.bible)).
+   - **King James Version (KJV)**: Public Domain globally (except Crown copyright limitations inside the UK).
+2. **Greek & Hebrew Strong's Lexicon Data**:
+   - Derived from **OpenScriptures Hebrew and Greek Lexicon project** ([OpenScriptures.org](https://openscriptures.github.io/)) and **STEPBible** data repository.
+   - Augmented by **James Strong's Exhaustive Concordance of the Bible** (1890, Public Domain).
+   - **Licensing**: Lexicon entries, morphological lemmas, and root definitions are released under Creative Commons Attribution 4.0 International (CC BY 4.0) and Public Domain dedications. Redistribution within the local app bundle complies fully with upstream attribution requirements.
 
 ---
 
